@@ -1,3 +1,6 @@
+*{
+	font-family: Gotham;
+}
 /* nav */
 .navbar{
 	padding: 0px 15px;
@@ -9,7 +12,7 @@
 	padding: 0px 15px !important;
 }
 nav a:hover{
-	color: #ff9900;
+	color: #f8a909;
 	text-decoration: underline;
 }
 .navbar.scrolled {
@@ -29,8 +32,14 @@ nav ul li a{
 /*.con1{
 	background: url('../img/bg6.jpg');
 }*/
-.con3{
+.con2{
+	background-image: url(../img/bg1.jpg);
 	margin-top: 70px;
+}
+.con2-col1{
+	padding: 90px 30px 60px 150px;
+}
+.con3{
 	margin-bottom: 60px;
 	background-color: #f7f7f7;
 }
@@ -78,7 +87,7 @@ nav ul li a{
 .con-bg{
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: top;
 }
 .att-info{
 	padding: 0px 10px;
@@ -88,7 +97,6 @@ nav ul li a{
 	color: #ffffff;
 }
 .he1{
-	font-family: 'Source Sans Pro', sans-serif;
 	margin-top: 30px;
 	padding: 30px 300px;
 	font-size: 3.5em;
@@ -109,7 +117,6 @@ nav ul li a{
 	width: 270px;	
 }
 .he2,.he4{
-	font-family: 'Source Sans Pro', sans-serif;
 	color: #414141;
 }
 .price-p{
@@ -124,7 +131,6 @@ nav ul li a{
 .att-price{
 	margin: 0;
 	color: #5480c7;
-	font-family: helvetica;
 	font-weight: bold;
 	font-size: 1.2em;
 	font-style: italic;
@@ -144,14 +150,14 @@ nav ul li a{
 .btn-buy{
 	border-radius: 40px;
 	border: none;
-	background-color: #ff9900;
+	background-color: #f8a909;
 	padding: 5px 27px;
 	font-size: 0.9em;
 }
 .btn-seeMore{
 	margin-top: 15px;
 	margin-bottom: 15px;
-	border: 1px solid #ff9900;
+	border: 1px solid #f8a909;
 	border-radius: 40px;
 	background-color: transparent;
 	padding: 7.5px 75px;
@@ -159,7 +165,7 @@ nav ul li a{
 	font-weight: bolder;
 }
 .btn-seeMore:hover{
-	background-color: #ff9900;
+	background-color: #f8a909;
 	color: #fff;
 }
 .accordion-button{
@@ -173,15 +179,12 @@ nav ul li a{
 }
 /*cards*/
 .card-deck{
-	padding: 30px 90px;
+	padding: 30px 150px;
 }
 .card-header{
 	background-color: #f2f1e7;
 	padding: 0;
 	border: none;
-}
-.card-titel,.card-text,.a-cards{
-	font-family: 'Open Sans', sans-serif;
 }
 .card-title{
 	position: relative;
@@ -232,13 +235,11 @@ nav ul li a{
 
 .form-control:-ms-input-placeholder { 
     color: #bcbcbc;
-    font-family: 'Roboto',sans-serif;
     font-size: 1em;
 }
 
 .form-control::-ms-input-placeholder { 
     color: #bcbcbc;
-    font-family: 'Roboto',sans-serif;
     font-size: 1em;
 }
 /*textarea{
