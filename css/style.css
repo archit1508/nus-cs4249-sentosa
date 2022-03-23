@@ -217,10 +217,12 @@ nav ul li a{
 	height: fit-content;
 }
 .card-img{
-	width: 100%;
+	width: 20%;
+
 }
 .card-body{
-	padding: 5px;
+	padding: px;
+	display: inline-block;
 }
 .buy-row{
 	padding: 5px;
@@ -354,4 +356,9 @@ tr{
 	.accordion{
 		width: 90%;
 	}
+}
+
+.space{
+	padding: 20px;
+	margin-top: 200px;
 }
