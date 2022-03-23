@@ -48,22 +48,42 @@
       });
 
       var cartObject = {}
+      var cartObject1 = {}
       var cartArray = []
       var cartCount = 0
 
       function pushAttAdv(){
         var e1 = document.getElementById("dateId");
         var e2 = document.getElementById("opId");
-        var e3 = document.getElementById("quanId");
+        var e3 = document.getElementById("quanId1");
         var e4 = document.getElementById("attName");
+        var e5 = document.getElementById("quanId2");
         cartObject.name = e4.innerHTML;
         cartObject.date = e1.value;
         cartObject.option = e2.options[e2.selectedIndex].text;
-        cartObject.quantity = e3.options[e3.selectedIndex].text;
+        cartObject.quantity1 = e3.options[e3.selectedIndex].value;
+        cartObject.quantity2 = e5.options[e5.selectedIndex].value;
         cartArray.push({...cartObject})
         console.log(cartArray)
         createCart()
       }
+      function pushAttAdv1() {
+          var e11 = document.getElementById("dateId-1");
+          var e21 = document.getElementById("opId-1");
+          var e31 = document.getElementById("quanId1-1");
+          var e41 = document.getElementById("attName-1");
+          var e51 = document.getElementById("quanId2-1");
+          cartObject1.name = e41.innerHTML;
+          cartObject1.date = e11.value;
+          cartObject1.option = e21.options[e21.selectedIndex].text;
+          cartObject1.quantity1 = e31.options[e31.selectedIndex].value;
+          cartObject1.quantity2 = e51.options[e51.selectedIndex].value;
+          cartArray.push({ ...cartObject1 })
+          console.log(cartArray)
+          console.log("1 caleed")
+
+          createCart()
+        }
 
       function createCart(){
         $("#cartTable tr").remove(); 
@@ -71,17 +91,74 @@
         $("#cartFormDiv").addClass("cartFormDivShow");
         cartCount = cartCount + 1
         document.getElementById("cartCount").innerHTML = cartCount;
+        var table = document.getElementById("cartTable");
+        var row0 = table.insertRow(0);
+        var c1 = row0.insertCell(0);
+        var c2 = row0.insertCell(1);
+        var c3 = row0.insertCell(2);
+        var c4 = row0.insertCell(3);
+        var c5 = row0.insertCell(4);
+        var c6 = row0.insertCell(5);
+        c1.innerHTML = "Attraction Name";
+        c2.innerHTML = "Type";
+        c3.innerHTML = "Adult Qty";
+        c4.innerHTML = "Child Qty";
+        c5.innerHTML = "Date";
+        c6.innerHTML = "Total"
+        row0.style.fontWeight = "bolder";
+        row0.style.border = "none";
+        var finalPrice = 0;
         cartArray.forEach(element => {
-          var table = document.getElementById("cartTable");
-          var row = table.insertRow(0)
+          console.log("Elem$$",element);
+          var row = table.insertRow(1)
           var cell1 = row.insertCell(0);
           var cell2 = row.insertCell(1);
           var cell3 = row.insertCell(2);
-          var cell4 = row.insertCell(3);
+          var cell4 = row.insertCell(3)
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
           cell1.innerHTML = element.name;
           cell2.innerHTML = element.option;
-          cell3.innerHTML = element.quantity;
-          cell4.innerHTML = element.date;
+          cell3.innerHTML = element.quantity1;
+          cell4.innerHTML = element.quantity2;
+          cell5.innerHTML = element.date;
+
+          var priceAdult = 0;
+          var priceChild = 0;
+          var totalPrice = 0;
+
+          if(element.name=="Adventure Cove Waterpark"){
+            console.log("ENTER 1 $$$$")
+            if(element.option == "Resident"){
+              priceAdult = 38;
+              priceChild = 38;
+            }
+            else if(element.option == "Non Resident"){
+              priceAdult = 45;
+              priceChild = 38;
+            }
+            priceAdult = priceAdult * parseInt(element.quantity1);
+            priceChild = priceChild * parseInt(element.quantity2);
+            totalPrice = priceAdult + priceChild;
+          }
+          else if(element.name == "Gogreen Cycle"){
+            console.log("ENTER 2 $$$$")
+            if (element.option == "Resident") {
+              console.log("ENTER 22 $$$$")
+              priceAdult = 15;
+              priceChild = 15;
+            }
+            else if (element.option == "Non Resident") {
+              priceAdult = 20;
+              priceChild = 15;
+            }
+            priceAdult = priceAdult * parseInt(element.quantity1);
+            priceChild = priceChild * parseInt(element.quantity2);
+            totalPrice = priceAdult + priceChild;
+          }
+          finalPrice = finalPrice + totalPrice;
+          cell6.innerHTML = totalPrice;
+          document.getElementById("grandTotal").innerHTML = "Grand Total: " + String(finalPrice);
         });
       }
 
@@ -127,7 +204,7 @@
             <a class="nav-link" onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');" href="#">ATTRACTIONS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" href="#">CART <i class="fa fa-shopping-cart"></i></a>
+            <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" href="#">CART <i class="fa fa-shopping-cart"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" onclick="$('#contact-con').animatescroll();$('.navbar-collapse').collapse('hide');" href="#">CONTACT</a>
@@ -144,39 +221,113 @@
             <img src="img/av1.png" class="modal-att-img" />
           </div>
           <div class="modal-body">
-            <h5 id="attName">Adventure Cove Waterpark</h5>
+            <h5 id="attName" class="att-heading">Adventure Cove Waterpark</h5>
             <form>
-              <input type="date" class="form-modal" name="date" id="dateId" />
-              <select class="form-select form-modal" aria-label="Default select example" name="select" id="opId">
-                <option selected>Select Option</option>
-                <option value="1">Resident</option>
-                <option value="2">op2</option>
-                <option value="3">op3</option>
-              </select>
-              <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId" >
-                <option selected>Quantity</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
+              <div class="form-group row">
+                <label for="dateId" class="col-sm-2 col-form-label">Date</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-modal" name="date" id="dateId" required="required" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="opId" class="col-sm-2 col-form-label">Type</label>
+                <div class="col-sm-10">
+                  <select class="form-select form-modal" aria-label="Default select example" name="select" id="opId" required="required">
+                    <option value="Resident">Resident</option>
+                    <option value="Non Resident">Non Resident</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="quanId1" class="col-sm-2 col-form-label">Qty</label>
+                <div class="col-sm-10">
+                  <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId1" required="required">
+                    <option selected>Adult</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                  <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId2" required="required">
+                    <option selected>Child</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                </div>
+              </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="pushAttAdv()">Add to cart</button>
+          <div class="modal-footer" style="justify-content: center;border:none">
+            <button type="button" class="btn btn-buy btn-primary btn-modal-buy" data-bs-dismiss="modal" onclick="pushAttAdv()">CONFIRM</button>
           </div>
         </div>
       </div>
     </div>
 
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="img/av2.jpeg" class="modal-att-img" />
+              </div>
+              <div class="modal-body">
+                <h5 id="attName-1" class="att-heading">Gogreen Cycle</h5>
+                <form>
+                  <div class="form-group row">
+                    <label for="dateId-1" class="col-sm-2 col-form-label">Date</label>
+                    <div class="col-sm-10">
+                      <input type="date" class="form-modal" name="date" id="dateId-1" required="required" />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="opId-1" class="col-sm-2 col-form-label">Type</label>
+                    <div class="col-sm-10">
+                      <select class="form-select form-modal" aria-label="Default select example" name="select" id="opId-1"
+                        required="required">
+                        <option value="Resident">Resident</option>
+                        <option value="Non Resident">Non Resident</option>
+                      </select>
+                    </div>
+                  </div>
+        
+                  <div class="form-group row">
+                    <label for="quanId1-1" class="col-sm-2 col-form-label">Qty</label>
+                    <div class="col-sm-10">
+                      <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId1-1"
+                        required="required">
+                        <option selected>Adult</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                      <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId2-1"
+                        required="required">
+                        <option selected>Child</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                      </select>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer" style="justify-content: center;border:none">
+                <button type="button" class="btn btn-buy btn-primary btn-modal-buy" data-bs-dismiss="modal"
+                  onclick="pushAttAdv1()">CONFIRM</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
     <div class="container-fluid con2 con-bg">
       <div class="row" style="margin-top: 50px;">
         <div class="col-sm-4 con2-col1">
-          <h6 style="font-weight: bolder;">THINGS TO DO</h6>
+          <h6 style="font-weight: bolder;color:rgb(84, 94, 117)">THINGS TO DO</h6>
           <h2 style="font-weight: bolder;color:#f8a909;margin-bottom:30px">ATTRACTIONS</h2>
           <p style="width: 150px;">Discover things to do on the island</p>
         </div>
-        <div class="col-sm-8 con2-col2">
+        <div class="col-sm-8 con2-col2 mobNoShow">
           <div class="row row-cols-md-4">
             <div class="col">
               <div class="card headerCard">
@@ -192,7 +343,7 @@
               <div class="card headerCard">
                 <div class="card-body headerCardBody">
                   <center>
-                    <img src="img/hc1.png" class="headerCardImg" />
+                    <img src="img/hc2.png" class="headerCardImg" />
                     <h6 style="font-weight:bold">Adventure</h6>
                   </center>
                 </div>
@@ -202,7 +353,7 @@
               <div class="card headerCard">
                 <div class="card-body headerCardBody">
                   <center>
-                    <img src="img/hc1.png" class="headerCardImg" />
+                    <img src="img/hc3.png" class="headerCardImg" />
                     <h6 style="font-weight:bold">Adventure</h6>
                   </center>
                 </div>
@@ -212,7 +363,7 @@
               <div class="card headerCard">
                 <div class="card-body headerCardBody">
                   <center>
-                    <img src="img/hc1.png" class="headerCardImg" />
+                    <img src="img/hc4.png" class="headerCardImg" />
                     <h6 style="font-weight:bold">Adventure</h6>
                   </center>
                 </div>
@@ -230,66 +381,68 @@
             <div class="card-deck">
               <div class="card">
                 <div class="card-header">
-                  <img src="img/av1.png" class="card-img" />
+                  <img src="img/av3.jpeg" class="card-img" />
                 </div>
                 <div class="card-body">
-                  <h6 class="att-heading">Adventure Cove Waterpark</h6>
+                  <h5 class="att-heading">Adventure Cove Waterpark</h5>
                   <div class="buy-row d-flex flex-row justify-content-around w-100 flex-wrap">
                     <div class="align-items-center align-self-center">
                       <p class="price-p">Price from</p>
-                      <h6 class="att-price align-items-center align-self-center">$38.<span style="font-size:0.8em">00</span></h6>
+                      <h6 class="att-price align-items-center align-self-center">$38.00</h6>
                     </div>
                     <div class="align-items-center align-self-center">
-                      <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</button>
+                      <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
                     </div>
                   </div>
                   <div class="att-info">
                     <p class="att-subheading">Resort World Sentosa</p>
-                    <p class="att-text">From zooming down high-speed water slides to drifting lazily down a winding river</p>
+                    <p class="att-text">Southeast Asia’s first hydro-magnetic coaster isn’t our only claim to fame! From zooming down..</p>
                   </div>
                   <button class="btn btn-seeMore">SEE MORE</button>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header">
-                  <img src="img/av1.png" class="card-img" />
+                  <img src="img/av2.jpeg" class="card-img" />
                 </div>
                 <div class="card-body">
-                  <h6 class="att-heading">Adventure Cove Waterpark</h6>
+                  <h5 class="att-heading">Gogreen Cycle</h5>
                   <div class="buy-row d-flex flex-row justify-content-around w-100 flex-wrap">
                     <div class="align-items-center align-self-center">
                       <p class="price-p">Price from</p>
-                      <h6 class="att-price align-items-center align-self-center">$38.<span style="font-size:0.8em">00</span></h6>
+                      <h6 class="att-price align-items-center align-self-center">$15.00</h6>
                     </div>
                     <div class="align-items-center align-self-center">
-                      <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</button>
+                      <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1">Book Now</button>
                     </div>
                   </div>
                   <div class="att-info">
-                    <p class="att-subheading">Resort World Sentosa</p>
-                    <p class="att-text">From zooming down high-speed water slides to drifting lazily down a winding river</p>
+                    <p class="att-subheading">Siloso Beach</p>
+                    <p class="att-text">Take a leisurely cycle around Sentosa to explore its numerous attractions with one of Gogreen..</p>
                   </div>
                   <button class="btn btn-seeMore">SEE MORE</button>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header">
-                  <img src="img/av1.png" class="card-img" />
+                  <img src="img/av4.jpeg" class="card-img" />
                 </div>
                 <div class="card-body">
-                  <h6 class="att-heading">Adventure Cove Waterpark</h6>
+                  <h5 class="att-heading">Beach Courts</h5>
                   <div class="buy-row d-flex flex-row justify-content-around w-100 flex-wrap">
                     <div class="align-items-center align-self-center">
                       <p class="price-p">Price from</p>
-                      <h6 class="att-price align-items-center align-self-center">$38.<span style="font-size:0.8em">00</span></h6>
+                      <h6 class="att-price align-items-center align-self-center">FREE</h6>
                     </div>
-                    <div class="align-items-center align-self-center">
-                      <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</button>
-                    </div>
+                    <!---<div class="align-items-center align-self-center">
+                       <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Book Now</button>
+                    </div> --->
                   </div>
                   <div class="att-info">
-                    <p class="att-subheading">Resort World Sentosa</p>
-                    <p class="att-text">From zooming down high-speed water slides to drifting lazily down a winding river</p>
+                    <p class="att-subheading">Siloso Beach</p>
+                    <p class="att-text">Bask in the sun as you show off your sporting prowess through beach court activities. At The State...</p>
                   </div>
                   <button class="btn btn-seeMore">SEE MORE</button>
                 </div>
@@ -300,21 +453,22 @@
       </div>
     </div>
 
-    <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion" id="accordionExample">
       <div class="accordion-item">
-          <button class="accordion-button btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <button class="accordion-button btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             <i class="fa fa-shopping-cart"></i> Cart (<span id="cartCount">0</span>)
           </button>
-        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
           <div class="accordion-body">
             <table class="table" id="cartTable">
               <tbody id="cartBody">
               </tbody>
             </table>
+            <center><button class="btn btn-dark" id="grandTotal"></button></center>
             <div id="cartFormDiv" class="cartFormDiv">
               <form class="row g-3 cartForm">
                 <div class="col-md-6">
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email Addess">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email Addess" />
                 </div>
                 <div class="col-md-6">
                   <input type="text" class="form-control" id="inputName4" placeholder="Full Name">
