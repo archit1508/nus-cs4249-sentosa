@@ -267,7 +267,6 @@ nav ul li a{
 }
 .form-select option{
 	text-align: center;
-	-webkit-appearance:none;
 }
 .col-form-label{
 	font-size: 0.8em;
@@ -280,7 +279,6 @@ nav ul li a{
 	margin: 5px 0px;
 	width: 100%;
 	font-family: 'Gotham Light';
-	-webkit-appearance:none;
 }
 /*textarea{
 	height: 100%;
