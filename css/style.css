@@ -6,7 +6,10 @@
   font-family: 'Gotham Black';
   src: url(../../../fonts/Gotham-Black.otf);
 }
-
+@font-face {
+  font-family: 'Gotham';
+  src: url(../../../fonts/Gotham-Bold.otf);
+}
 *{
 	font-family: Gotham;
 }
