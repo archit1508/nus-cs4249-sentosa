@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Gotham Light';
-  src: url(../../fonts/GothamLight.ttf);
+  src: url(../../../fonts/GothamLight.ttf);
 }
 @font-face {
   font-family: 'Gotham Black';
-  src: url(../../fonts/Gotham-Black.otf);
+  src: url(../../../fonts/Gotham-Black.otf);
 }
 
 *{
@@ -135,7 +135,7 @@ nav ul li a{
 .price-p{
 	margin-bottom: 0;
 	font-size: 0.75em;
-	font-family: 'gotham light';
+	font-family: 'Gotham Light';
 	font-weight: bold;
 }
 .att-heading{
@@ -275,7 +275,7 @@ nav ul li a{
 	padding: 0 15px;
 	margin: 5px 0px;
 	width: 100%;
-	font-family: 'gotham light';
+	font-family: 'Gotham Light';
 }
 /*textarea{
 	height: 100%;
