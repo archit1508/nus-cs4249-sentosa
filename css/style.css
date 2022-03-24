@@ -278,7 +278,8 @@ nav ul li a{
 	padding: 0 15px;
 	margin: 5px 0px;
 	width: 100%;
-	font-family: 'Gotham Light';
+	font-family: 'Gotham';
+	font-weight: lighter;
 }
 /*textarea{
 	height: 100%;
