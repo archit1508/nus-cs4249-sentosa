@@ -362,3 +362,11 @@ tr{
 	padding: 20px;
 	margin-top: 200px;
 }
+
+.card-body{
+	background-color: rgb(244, 247, 239);
+}
+.dark-red{
+	background-color: rgb(200, 67, 50);
+	color: white;
+}
