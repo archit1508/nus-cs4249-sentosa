@@ -13,7 +13,7 @@
 //   eventName: 'myevent',
 //   info: {key1: val1, key2: val2}
 // }}));
-
+//
 var ENABLE_NETWORK_LOGGING = true; // Controls network logging.
 var ENABLE_CONSOLE_LOGGING = true; // Controls console logging.
 var LOG_VERSION = '0.1';           // Labels every entry with version: "0.1".
