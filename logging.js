@@ -62,13 +62,13 @@ function elementDesc(elt) {
     return 'window';
   }
   function descArray(elt) {
-    var desc = [elt.tagName.toLowerCase()];
+    //var desc = [elt.tagName.toLowerCase()];
     if (elt.id) {
       desc.push('#' + elt.id);
     }
-    for (var j = 0; j < elt.classList.length; j++) {
-      desc.push('.' + elt.classList[j]);
-    }
+    // for (var j = 0; j < elt.classList.length; j++) {
+    //   desc.push('.' + elt.classList[j]);
+    // }
     return desc;
   }
   var desc = [];
@@ -126,10 +126,11 @@ function logEvent(event, customName, customInfo) {
     }
   }
   // Let a custom event add fields to the info.
-  if (customInfo) {
-    infoObj = Object.assign(infoObj, customInfo);
-  }
-  var info = JSON.stringify(infoObj);
+  // if (customInfo) {
+  //   infoObj = Object.assign(infoObj, customInfo);
+  // }
+  // var info = JSON.stringify(infoObj);
+  var info = String(customInfo);
   var target = document;
   if (event) {target = elementDesc(event.target);}
   var state = location.hash;

@@ -47,6 +47,7 @@
         
       });
 
+
       var cartObject = {}
       var cartObject1 = {}
       var cartArray = []
@@ -184,12 +185,16 @@
           info: {'key1': 'val1', 'key2': 'val2'}
         });
       }
+      function sendCustomEvent3() {
+        console.log('sendCustomEvent2');
+        loggingjs.logEvent(null, 'myevent2','taskA');
+      }
 
     </script>
 
     <title>Sentosa Resorts</title>
   </head>
-  <body>
+  <body onload="sendCustomEvent3();">
     <nav class="navbar navbar-expand-md fixed-top">
       <a href="#" class="nav-logo-a" onclick="test1();$('#home-con').animatescroll();" href="#"><img src="img/sentosa_logo.png" class="logo-nav img-fluid"></a>
         <a class="navbar-toggler" data-toggle="collapse" data-target="#nav-coll" aria-controls="nav-coll" aria-expanded="false" aria-label="Toggle navigation" onclick="$('.navbar').toggleClass('scrolled');">
@@ -201,7 +206,7 @@
             <a class="nav-link" onclick="$('#home-con').animatescroll();$('.navbar-collapse').collapse('hide');" href="#">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');" href="#">ATTRACTIONS</a>
+            <a class="nav-link" onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent2();" href="#">ATTRACTIONS</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" href="#">CART <i class="fa fa-shopping-cart"></i></a>
@@ -233,7 +238,7 @@
                 <label for="opId" class="col-sm-2 col-form-label">Type</label>
                 <div class="col-sm-10">
                   <select class="form-select form-modal" aria-label="Default select example" name="select" id="opId" required="required">
-                    <option value="Resident">Resident</option>
+                    <option value="Resident" id="resId">Resident</option>
                     <option value="Non Resident">Non Resident</option>
                   </select>
                 </div>
@@ -492,7 +497,7 @@
                   <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-danger cartButton">Complete Purchase</button>
+                  <button type="submit" class="btn btn-danger cartButton">Proceed to payment</button>
                 </div>
               </form>
             </div>
@@ -500,6 +505,6 @@
         </div>
       </div>
    </div>
-
+   <div id="taskName" style="display:none;">THIS IS TASK 1</div>
   </body>
 </html>

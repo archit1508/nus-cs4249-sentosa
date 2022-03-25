@@ -1,0 +1,9 @@
+things to log - 
+
+#correct flow - 
+window.onload - indicate start time, and log the name of the task for accuracy
+every button, every form 
+proceed to payment - task complete
+when they hit ptp - log the no of items in the cart - 
+
+index, details, details-gogreen 
