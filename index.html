@@ -231,13 +231,13 @@
               <div class="form-group row">
                 <label for="dateId" class="col-sm-2 col-form-label">Date</label>
                 <div class="col-sm-10">
-                  <input type="date" class="form-modal" name="date" id="dateId" required="required" />
+                  <input type="date" class="form-modal" name="date" id="dateId" onclick="sendCustomEvent3('ac_date')" required="required" />
                 </div>
               </div>
               <div class="form-group row">
                 <label for="opId" class="col-sm-2 col-form-label">Type</label>
                 <div class="col-sm-10">
-                  <select class="form-select form-modal" aria-label="Default select example" name="select" id="opId" required="required">
+                  <select class="form-select form-modal" aria-label="Default select example" onclick="sendCustomEvent3('ac_ticket_type')" name="select" id="opId" required="required">
                     <option value="Resident" id="resId">Resident</option>
                     <option value="Non Resident">Non Resident</option>
                   </select>
@@ -247,13 +247,13 @@
               <div class="form-group row">
                 <label for="quanId1" class="col-sm-2 col-form-label">Qty</label>
                 <div class="col-sm-10">
-                  <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId1" required="required">
+                  <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId1" onclick="sendCustomEvent3('ac_adult_qty')" required="required">
                     <option selected>Adult</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                   </select>
-                  <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId2" required="required">
+                  <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId2" onclick="sendCustomEvent3('ac_child_qty')" required="required">
                     <option selected>Child</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
@@ -264,7 +264,7 @@
             </form>
           </div>
           <div class="modal-footer" style="justify-content: center;border:none">
-            <button type="button" class="btn btn-buy btn-primary btn-modal-buy" data-bs-dismiss="modal" onclick="pushAttAdv()">CONFIRM</button>
+            <button type="button" class="btn btn-buy btn-primary btn-modal-buy" data-bs-dismiss="modal" onclick="pushAttAdv(); sendCustomEvent3('ac_confirm')">CONFIRM</button>
           </div>
         </div>
       </div>
@@ -282,13 +282,13 @@
                   <div class="form-group row">
                     <label for="dateId-1" class="col-sm-2 col-form-label">Date</label>
                     <div class="col-sm-10">
-                      <input type="date" class="form-modal" name="date" id="dateId-1" required="required" />
+                      <input type="date" class="form-modal" name="date" id="dateId-1" onclick="sendCustomEvent3('gg_date')"required="required" />
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="opId-1" class="col-sm-2 col-form-label">Type</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-modal" aria-label="Default select example" name="select" id="opId-1"
+                      <select class="form-select form-modal" aria-label="Default select example" onclick="sendCustomEvent3('gg_ticket_type')"name="select" id="opId-1"
                         required="required">
                         <option value="Resident">Resident</option>
                         <option value="Non Resident">Non Resident</option>
@@ -299,14 +299,14 @@
                   <div class="form-group row">
                     <label for="quanId1-1" class="col-sm-2 col-form-label">Qty</label>
                     <div class="col-sm-10">
-                      <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId1-1"
+                      <select class="form-select form-modal" aria-label="Default select example" onclick="sendCustomEvent3('gg_adult_qty')" name="quantity" id="quanId1-1"
                         required="required">
                         <option selected>Adult</option>
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                       </select>
-                      <select class="form-select form-modal" aria-label="Default select example" name="quantity" id="quanId2-1"
+                      <select class="form-select form-modal" aria-label="Default select example" onclick="sendCustomEvent3('gg_child_qty')" name="quantity" id="quanId2-1"
                         required="required">
                         <option selected>Child</option>
                         <option value="0">0</option>
@@ -319,7 +319,7 @@
               </div>
               <div class="modal-footer" style="justify-content: center;border:none">
                 <button type="button" class="btn btn-buy btn-primary btn-modal-buy" data-bs-dismiss="modal"
-                  onclick="pushAttAdv1()">CONFIRM</button>
+                  onclick="pushAttAdv1(); sendCustomEvent3('gg_confirm')">CONFIRM</button>
               </div>
             </div>
           </div>
@@ -396,7 +396,7 @@
                       <h6 class="att-price align-items-center align-self-center">$38.00</h6>
                     </div>
                     <div class="align-items-center align-self-center">
-                      <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
+                      <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="sendCustomEvent3('ac_book_now')">Book Now</button>
                     </div>
                   </div>
                   <div class="att-info">
@@ -419,7 +419,7 @@
                     </div>
                     <div class="align-items-center align-self-center">
                       <button class="btn btn-primary btn-buy align-items-center align-self-center" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal1">Book Now</button>
+                        data-bs-target="#exampleModal1" onclick="sendCustomEvent3('gg_book_now')">Book Now</button>
                     </div>
                   </div>
                   <div class="att-info">
@@ -460,7 +460,7 @@
 
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">
-          <button class="accordion-button btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="accordion-button btn" type="button" onclick="sendCustomEvent3('cart')" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             <i class="fa fa-shopping-cart"></i> Cart (<span id="cartCount">0</span>)
           </button>
         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
@@ -469,11 +469,11 @@
               <tbody id="cartBody">
               </tbody>
             </table>
-            <center><button class="btn btn-dark" id="grandTotal"></button></center>
+            <center><label class="btn btn-dark" id="grandTotal"></label></center>
             <div id="cartFormDiv" class="cartFormDiv">
               <form class="row g-3 cartForm">
                 <div class="col-md-6">
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email Addess" />
+                  <!-- <input type="email" class="form-control" id="inputEmail4" placeholder="Email Addess" />
                 </div>
                 <div class="col-md-6">
                   <input type="text" class="form-control" id="inputName4" placeholder="Full Name">
@@ -495,9 +495,9 @@
                 </div>
                 <div class="col-12">
                   <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
+                </div> -->
                 <div class="col-12">
-                  <button type="submit" class="btn btn-danger cartButton" onclick="sendCustomEvent3('ABCD')">Proceed to payment</button>
+                  <button type="submit" class="btn btn-danger cartButton" onclick="sendCustomEvent3('pay')">Proceed to payment</button>
                 </div>
               </form>
             </div>
