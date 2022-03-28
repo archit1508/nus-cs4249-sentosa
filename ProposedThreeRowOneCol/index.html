@@ -171,17 +171,17 @@
       }
 
       function sendCustomEvent4() {
-          loggingjs.logEvent(null, 'startOfTask', 'insert name of task here');
+          loggingjs.logEvent(null, 'startOfTask', 'proposed 3 row 1 col');
         }
         function taskComplete() {
           var cartEle = document.getElementById("cartCount");
           if (cartEle.innerHTML == '2') {
             alert("Task Completed with all correct options");
-            loggingjs.logEvent(null, 'endOfTaskAllCorrect', 'insert name of task here');
+            loggingjs.logEvent(null, 'endOfTaskAllCorrect', 'proposed 3 row 1 col');
           }
           else {
             alert("Task Completed");
-            loggingjs.logEvent(null, 'endOfTaskNotCorrect', 'insert name of task here');
+            loggingjs.logEvent(null, 'endOfTaskNotCorrect', 'proposed 3 row 1 col');
           }
         }
 
