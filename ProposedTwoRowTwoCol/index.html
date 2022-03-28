@@ -175,15 +175,7 @@
           loggingjs.logEvent(null, 'startOfTask', 'proposed 2 row 2 col');
         }
         function taskComplete() {
-          var cartEle = document.getElementById("cartCount");
-          if (cartEle.innerHTML == '2') {
-            alert("Task Completed with all correct options");
-            loggingjs.logEvent(null, 'endOfTaskAllCorrect', 'proposed 2 row 2 col');
-          }
-          else {
-            alert("Task Completed");
-            loggingjs.logEvent(null, 'endOfTaskNotCorrect', 'proposed 2 row 2 col');
-          }
+          loggingjs.logEvent(null, 'endOfTaskNotCorrect', 'proposed 2 row 2 col');
         }
 
     </script>
