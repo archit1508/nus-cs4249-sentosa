@@ -1,0 +1,404 @@
+@font-face {
+  font-family: 'Gotham Light';
+  src: url(../fonts/GothamLight.ttf);
+}
+@font-face {
+  font-family: 'Gotham Black';
+  src: url(../fonts/Gotham-Black.otf);
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fonts/Gotham-Bold.otf);
+}
+*{
+	font-family: Gotham;
+}
+/* nav */
+.navbar{
+	padding: 0px 15px;
+}
+.logo-nav{
+	width: 180px;
+}
+.nav-link{
+	padding: 0px 15px !important;
+}
+nav a:hover{
+	color: #f8a909;
+	text-decoration: underline;
+}
+.navbar.scrolled {
+	padding: 5px 60px;
+	background-color: rgba(90,90,90,0.8);
+	transition: background-color 200ms linear;
+}
+.logo-nav.scrolled{
+	width: 45px;
+}
+nav ul li a{
+	font-size: 0.8em;
+	color: #000;
+}
+
+/*containers*/
+/*.con1{
+	background: url('../img/bg6.jpg');
+}*/
+.con2{
+	background-image: url(../img/bg1.jpg);
+	margin-top: 70px;
+}
+.con2-col1{
+	padding: 90px 30px 60px 150px;
+}
+.con2-col2{
+	margin-top: 15px;
+}
+.con3{
+	padding-bottom: 60px;
+	background-color: #f7f7f7;
+}
+.con6{
+	background-color: red;
+	position: fixed;
+	height: fit-content;
+	top: 100px;
+	right: 0;
+    left: 0;
+	z-index: 9999;
+}
+.accordion{
+	background-color: #fff;
+	height: fit-content;
+	width: 650px;
+	position: fixed;
+	bottom: 0;
+	right:0;
+	z-index: 9999;
+}
+.cartFormDiv{
+	display: none;
+}
+.cartFormDivShow{
+	display: initial;
+}
+.cartForm{
+	padding: 15px;
+}
+.row-about-p{
+	padding-top: 30px;
+	padding-bottom: 120px;
+	background: url('../img/bg4.jpg');
+}
+.con5{
+	padding: 0;
+}
+.con5 .row1{
+	padding-top: 45px;
+	padding-right: 60px;
+	padding-left: 60px;
+	padding-bottom: 15px;
+	background-color: #f2f1e7;
+}
+.con-bg{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+.att-info{
+	padding: 0px 10px;
+}
+/*all text*/
+.p1,.btn1,.card-title{
+	color: #ffffff;
+}
+.he1{
+	margin-top: 30px;
+	padding: 30px 300px;
+	font-size: 3.5em;
+}
+.he2{
+	margin-top: 90px;
+	width: 210px;
+	border-bottom: 4px solid #ff5500;
+}
+.he3{
+	margin-top: 15px;
+}
+.he4{
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+.he3,.he4{
+	width: 270px;	
+}
+.he2,.he4{
+	color: #414141;
+}
+.price-p{
+	margin-bottom: 0;
+	font-size: 0.75em;
+	font-family: 'Gotham Light';
+	font-weight: bold;
+}
+.att-heading{
+	font-weight: bolder;
+	margin-bottom: 27px;
+	margin-top:18px;
+	padding-right: 15px;
+	padding-left: 10px;
+	text-align:left;
+	height: 40px;
+}
+#attName{
+	margin: 0 !important;
+}
+.att-price{
+	margin: 0;
+	color: #5480c7;
+	font-size: 1.1em;
+	font-family:'Gotham Light';
+}
+.att-subheading{
+	text-align: left;
+	margin-bottom: 10px;
+	font-family: 'Gotham';
+	font-weight: bolder;
+	font-size:0.9em;
+	color:rgb(84, 94, 117);
+}
+.att-text{
+	font-size: 0.8em;
+	text-align: left;
+	font-family: 'Gotham Light';
+	color: #696969;
+	margin-bottom: 15px;
+	padding-right:27px;
+}
+/*buttons*/
+.btn-buy{
+	border-radius: 40px;
+	border: none;
+	background-color: #f8a909;
+	padding: 5px 27px;
+	font-size: 0.9em;
+	font-weight:bold;
+}
+.btn-seeMore{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border: 1px solid #f8a909;
+	border-radius: 40px;
+	background-color: transparent;
+	padding: 7.5px 75px;
+	font-size: 0.6em;
+	font-weight: bolder;
+}
+.btn-seeMore:hover{
+	background-color: #f8a909;
+	color: #fff;
+}
+.accordion-button{
+	width: 100%;
+	border: none;
+	border-radius: 0px;
+	background-color: #f8a909;
+}
+.cartButton{
+	font-size: 0.8em;
+	padding: 5px 10px;
+}
+/*cards*/
+.headerCardImg{
+	width: 150px;
+	padding: 30px 0;
+}
+.card-deck{
+	padding: 30px 150px;
+}
+.card-header{
+	background-color: #f2f1e7;
+	padding: 0;
+	border: none;
+}
+.card-title{
+	position: relative;
+	padding: 7.5px;
+	margin-bottom: 0;	
+	font-size: 1.5em;
+	z-index:200;
+	font-weight: 700;
+	color: #000;
+}
+/*.card-text{
+	color: #b5b5b5;
+	padding: 15px 15px;
+	font-weight: 400 !important;
+	height: 150px;
+}*/
+.a-cards{
+	color: #034670;
+	font-weight: 700;
+}
+.card{
+	border:none;
+	box-shadow: 0px 0px 5px #e2e2e2;
+	height: fit-content;
+}
+.card-img{
+	width: 100%;
+}
+.card-body{
+	padding: 5px;
+}
+.buy-row{
+	padding: 5px;
+	margin-bottom: 21px;
+}
+/*form*/
+.form-control{
+	border:none;
+	border-radius:45px;
+	margin-bottom: 15px;
+}
+.form-select{
+	padding: 5px 15px !important;
+	width: 100%;
+}
+.form-select option{
+	text-align: center;
+}
+.col-form-label{
+	font-size: 0.8em;
+	font-family: 'Gotham Black' !important;
+}
+.form-modal{
+	border:1px solid black;
+	border-radius:25px;
+	padding: 0 15px;
+	margin: 5px 0px;
+	width: 100%;
+	font-family: 'Gotham';
+	font-weight: lighter;
+}
+/*textarea{
+	height: 100%;
+	margin-bottom: 30px;
+}*/
+#input3{
+	margin-bottom: 0;
+}
+/* table */
+.table{
+	font-size: 0.8em;
+}
+tr{
+	border-bottom: 1px solid #e2e2e2;
+}
+/*footer*/
+.p-footer-end{
+	color: #000;
+	font-size: 0.8em;
+	margin-left: 90px;
+	padding-top: 15px;
+}
+.row-end{
+	background-color: #e2e2e2;
+}
+.mobShow{
+	display: none;
+}
+.thanks{
+	display: none;
+}
+.os{
+	display: initial;
+	margin-bottom: 75px;
+}
+.f-submit{
+	margin-bottom: 60px;
+}
+.mobShow2{
+	margin-bottom: 30px;
+}
+
+
+.modal-dialog{
+	width: 350px;
+}
+.modal-dialog form{
+	padding: 0 15px;
+}
+.modal-header{
+	padding: 0;
+}
+.modal-footer{
+	padding-top: 0 !important;
+}
+.modal-att-img{
+	width: 100%;
+}
+.btn-modal-buy{
+	width: 100%;
+	color: #000;
+}
+
+
+/*mobile*/
+@media only screen and (max-device-width : 768px){
+	.mobNoShow{
+		display: none;
+	}
+	.con2-col1{
+		padding: initial;
+		text-align: center;
+		margin-top: 15px;
+	}
+	.con2-col1 p{
+		display: none;
+	}
+	.he1,.p1,.p2,.p2-1,.card-deck{
+		padding:initial;
+	}
+	form,.p-footer-end{
+		margin: initial;
+	}
+	.he1{
+		font-size: 2em;
+		margin-top: 210px;
+	}
+	.con5 .row1{
+		padding-right: initial;
+		padding-left: initial;
+	}
+	.col-footer{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.p-footer-inside{
+		font-size: 0.7em;
+	}
+	.he4{
+		margin-top: 90px;
+	}
+	.card-deck-2{
+		margin-top: 15px;
+	}
+	.nav-item{
+		padding: 10px;
+	}
+	.mobShow{
+		display: initial;
+	}
+	.logo-nav{
+		width: 45px;
+	}
+	.he-mob{
+		font-size: 0.75em;
+		color: #ffffff;
+	}
+	.os{margin-bottom: 45px;}
+	.accordion{
+		width: 90%;
+	}
+}

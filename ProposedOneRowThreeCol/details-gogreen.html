@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style-details-gogreen.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,400,700|Source+Sans+Pro:700"
+        rel="stylesheet">
+
+    <!-- JS/JQUERY -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src = "logging.js"></script>
+    <script type="text/javascript">
+        function addToCart(){
+            var e1 = document.getElementById("quanGG");
+            document.getElementById("checkoutButtons").classList.remove("checkoutButtons");
+            document.getElementById("checkoutButtons").classList.add("checkoutButtons2");
+            console.log(e1.value);
+        }
+        function taskComplete(){
+            alert("Task Completed");
+        }
+    </script>
+
+        <title>Sentosa Resorts</title>
+        </head>
+        
+        <body>
+            <nav class="navbar navbar-expand-md fixed-top">
+                <a href="#" class="nav-logo-a" onclick="test1();$('#home-con').animatescroll();" href="#"><img
+                        src="img/sentosa_logo.png" class="logo-nav img-fluid"></a>
+                <a class="navbar-toggler" data-toggle="collapse" data-target="#nav-coll" aria-controls="nav-coll"
+                    aria-expanded="false" aria-label="Toggle navigation" onclick="$('.navbar').toggleClass('scrolled');">
+                    &#9776
+                </a>
+                <div class="collapse navbar-collapse" id="nav-coll">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="$('#home-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+                                href="#">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+                                href="#">ATTRACTIONS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne" href="#">CART <i class="fa fa-shopping-cart"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                onclick="$('#contact-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+                                href="#">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid con-d-1 con-bg-d ">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid con-d-2">
+                <div class="row">
+                    <div class="col-sm-12 col-md-9">
+                        <h2>GOGREEN CYCLES</h2>
+                        <p class="p-d-1">
+                            Take a leisurely cycle around Sentosa to explore its numerous attractions with one of Gogreen Cycle's rental bikes. Pick up a copy of Sentosa’s cycling map and navigate your way via dedicated bicycle tracks for an easy, coastal cruise around the island. Bike rentals are available at the Segway® Eco Adventure ticketing Counter at Beach Station (opposite Old Chang Kee) and at Segway Eco Adventure at Siloso Beach (opposite Bikini Bar). *Please note Tandem bicycles and Adult with child seat bicycles are not available.
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-md-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-1 col-d-1"><img class="i-d-1" src="img/di2.png" /></div>
+                    <div class="col-sm-4">
+                        <h6 class="d-h-2">FUN FACT</h6>
+                        <p class="p-d-2">Why walk when you can explore Sentosa on two wheels?</p>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+                <div class="row r-d-1">
+                    <h3>TICKET OPTIONS</h3>
+                    <div class="col-md-3"></div>
+                    <div class="col-sm-12 col-md-9 col-d-2">
+                        <h6 style="margin-left:81px;margin-top:15px">GoGreen Bi-Pedal Bicycle 2 hr</h6>
+                        <div class="r-d-1-1 d-flex flex-row justify-content-around w-100 flex-wrap">
+                            <div class="align-items-center align-self-center">
+                              <p class="p-d-3">PER TICKET</p>
+                              <h6 class="d-h-3 align-items-center align-self-center">$15.00</h6>
+                            </div>
+                            <div class="align-items-center align-self-center">
+                              <div class="input-group mb-3">
+                                  <input style="width:90px" type="number" class="form-control" min=1 max=4 id="quanGG" onchange="addToCart()" placeholder="0">
+                              </div>
+                            </div>
+                        </div>
+                        <h6 style="color:#fff;margin-top:45px;margin-left:81px;">GoGreen Bi-Pedal Bicycle 2 hr @ $15 only (U.P. $18)</h6>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:100px;">
+                    <div class="col-sm-12 col-md-9 checkoutButtons" id="checkoutButtons">
+                        <div class="r-d-1-1 d-flex flex-row justify-content-around w-100 flex-wrap">
+                            <div class="align-items-center align-self-center">
+                              <button class="btn btn-buy btn-gg-1" onclick=taskComplete()>ADD TO CART</button>
+                            </div>
+                            <div class="align-items-center align-self-center">
+                              <button class="btn btn-buy btn-gg-2" onclick=taskComplete()>GO TO CHECKOUT</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        
+        </body>
+        
+        </html>

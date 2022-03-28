@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Gotham Light';
+  src: url(../fonts/GothamLight.ttf);
+}
+@font-face {
+  font-family: 'Gotham Black';
+  src: url(../fonts/Gotham-Black.otf);
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fonts/Gotham-Bold.otf);
+}
+body{
+	background-color: #f7f7f7;
+}
+.con-bg-d{
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+}
+.con-d-1{
+	background: url(../img/details1.jpeg);
+	height: 500px;
+	width: 95%;
+	margin: 100px auto;
+	padding: 0 30px;
+}
+.con-d-2{
+	padding: 0 150px;
+}
+.p-d-1,.p-d-2{
+	font-family:'Gotham Light' ;
+	font-weight: bolder;
+}
+.p-d-2{
+	padding: 0 18px;
+}
+.p-d-3{
+	margin-top: 15px;
+}
+.p-d-4{
+	font-size: 2em;
+}
+.d-h-3{
+	font-size: 2em;
+}
+.i-d-1{
+	width: 60px;
+}
+.col-d-2{
+	background: url(../img/ticket.png);
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	height: 400px;
+}
+.btn-buy-d{
+	color: #000;
+	border-radius: 40px;
+	border: none;
+	background-color: #f8a909;
+	padding: 15px 120px;
+	font-size: 1em;
+	font-weight:bold;
+}
+.r-d-1-1{
+	margin: 5px 10px 5px 10px;
+}
+.r-d-1-2{
+	margin-top: 10px;
+	padding: 5px 167.5px 5px 120px;
+}
+
+@media only screen and (max-device-width : 768px){
+	.con-d-1{
+		width: initial;
+		padding: initial;
+		margin: initial;
+	}
+	.con-d-2{
+		padding: initial;
+	}
+}

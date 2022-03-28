@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Gotham Light';
+  src: url(../fonts/GothamLight.ttf);
+}
+@font-face {
+  font-family: 'Gotham Black';
+  src: url(../fonts/Gotham-Black.otf);
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fonts/Gotham-Bold.otf);
+}
+body{
+	background-color: #f7f7f7;
+}
+.con-bg-d{
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+}
+.con-d-1{
+	background: url(../img/details2.webp);
+	height: 500px;
+	width: 95%;
+	margin: 100px auto;
+	padding: 0 30px;
+}
+.con-d-2{
+	padding: 0 150px;
+}
+.p-d-1,.p-d-2{
+	font-family:'Gotham Light' ;
+	font-weight: bolder;
+}
+
+.p-d-3{
+	margin-top: 15px;
+	font-size: 0.8em;
+	margin-bottom: 0 !important;
+}
+.p-d-4{
+	font-size: 2em;
+}
+.d-h-3{
+	font-size: 2em;
+}
+.i-d-1{
+	width: 60px;
+}
+.col-d-2{
+	background: url(../img/gg1.png);
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center !important;
+	height: 200px;
+	margin-bottom: 15px;
+}
+.btn-buy-d{
+	color: #000;
+	border-radius: 40px;
+	border: none;
+	background-color: #f8a909;
+	padding: 15px 120px;
+	font-size: 1em;
+	font-weight:bold;
+}
+.btn-gg-1,.btn-gg-2{
+	padding: 15px 90px;
+}
+.btn-gg-1:hover{
+	background-color: #ffdd98;
+}
+.btn-gg-2:hover{
+	background-color: #ffdd98;
+}
+.btn-gg-2{
+	background-color: transparent;
+	border:  1px solid #f8a909;
+}
+.checkoutButtons{
+	display: none;
+}
+.checkoutButtons2{
+	display: initial;
+}
+.r-d-1{
+	margin-top: 30px;
+}
+.r-d-1-1{
+	margin: 5px 10px 5px 10px;
+}
+.r-d-1-2{
+	margin-top: 10px;
+	padding: 5px 167.5px 5px 120px;
+}
+
+@media only screen and (max-device-width : 768px){
+	.con-d-1{
+		width: initial;
+		padding: initial;
+		margin: initial;
+	}
+	.con-d-2{
+		padding: initial;
+	}
+}
