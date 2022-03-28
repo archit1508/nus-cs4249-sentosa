@@ -25,6 +25,12 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src = "logging.js"></script>
+    <script type="text/javascript">
+        function sendCustomEvent3(abcd) {
+            console.log('sendCustomEvent2');
+            loggingjs.logEvent(null, 'myevent2', abcd);
+        }
+    </script>
 
         <title>Sentosa Resorts</title>
         </head>
@@ -32,7 +38,7 @@
         <body>
             <nav class="navbar navbar-expand-md fixed-top">
                 <a href="#" class="nav-logo-a" onclick="test1();$('#home-con').animatescroll();" href="#"><img
-                        src="img/sentosa_logo.png" class="logo-nav img-fluid"></a>
+                        src="img/sentosa_logo.png" class="logo-nav img-fluid" onclick="sendCustomEvent3('error_click');"></a>
                 <a class="navbar-toggler" data-toggle="collapse" data-target="#nav-coll" aria-controls="nav-coll"
                     aria-expanded="false" aria-label="Toggle navigation" onclick="$('.navbar').toggleClass('scrolled');">
                     &#9776
@@ -40,12 +46,12 @@
                 <div class="collapse navbar-collapse" id="nav-coll">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" onclick="$('#home-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+                            <a class="nav-link" onclick="$('#home-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent3('error_click');"
                                 href="#">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+                                onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent3('error_click');"
                                 href="#">ATTRACTIONS</a>
                         </li>
                         <li class="nav-item">
@@ -54,14 +60,14 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                                onclick="$('#contact-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+                                onclick="$('#contact-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent3('error_click');"
                                 href="#">CONTACT</a>
                         </li>
                     </ul>
                 </div>
             </nav>
 
-            <div class="container-fluid con-d-1 con-bg-d ">
+            <div class="container-fluid con-d-1 con-bg-d " onclick="sendCustomEvent3('error_click');">
                 <div class="row">
                     <div class="col-sm-12">
                         
@@ -106,7 +112,7 @@
                               <h6 class="d-h-3 align-items-center align-self-center">$38.00</h6>
                             </div>
                             <div class="align-items-center align-self-center">
-                              <button class="btn btn-primary btn-buy-d align-items-center align-self-center" onclick="window.location='page-3.html';">Buy Now</button>
+                              <button class="btn btn-primary btn-buy-d align-items-center align-self-center" onclick="window.location='page-3.html';sendCustomEvent3('ac_old_buynow');">Buy Now</button>
                             </div>
                         </div>
                         <div class="r-d-1-2 d-flex flex-row justify-content-between w-100 flex-wrap">

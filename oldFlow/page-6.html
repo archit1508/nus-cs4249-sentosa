@@ -25,6 +25,12 @@
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="animatescroll.js"></script>
     <script src="logging.js"></script>
+    <script type="text/javascript">
+        function sendCustomEvent3(abcd) {
+          console.log('sendCustomEvent2');
+          loggingjs.logEvent(null, 'myevent2', abcd);
+        }
+      </script>
 
     <style>
         body {
@@ -85,7 +91,7 @@
                                             <div class="attraction-content-wrapper">
                                                 <div class="attraction-booking-detail detail-ie clearfix">
                                                     <div style="margin-left:10px">
-                                                        <img alt="" width="350" src="img/a1.png">
+                                                        <img alt="" width="350" src="img/a1.png" onclick="sendCustomEvent3('error_click');">
                                                     </div>
                                                     <span class="valid-days">
                                                         <span>Valid on <strong>25 March 2022</strong></span>
@@ -172,8 +178,8 @@
                             </div>
                         </div>
                         <button class="btn " onclick="">Edit</button>
-                        <button class="btn " onclick="">Back</button>
-                        <button class="btn dark-red" onclick=""> Proceed to payment</button>
+                        <button class="btn " onclick="window.location='./page-5.html';">Back</button>
+                        <button class="btn dark-red" onclick="sendCustomEvent3('ac_old_proceedto_payment');"> Proceed to payment</button>
                     </div>
 
 

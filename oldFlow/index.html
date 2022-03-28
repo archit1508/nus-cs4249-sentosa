@@ -203,10 +203,10 @@
   <title>Sentosa Resorts</title>
 </head>
 
-<body onload="sendCustomEvent3('TaskA')">
+<body>
   <nav class="navbar navbar-expand-md fixed-top">
     <a href="#" class="nav-logo-a" onclick="test1();$('#home-con').animatescroll();" href="#"><img
-        src="img/sentosa_logo.png" class="logo-nav img-fluid"></a>
+        src="img/sentosa_logo.png" class="logo-nav img-fluid" onclick="sendCustomEvent3('error_click');"></a>
     <a class="navbar-toggler" data-toggle="collapse" data-target="#nav-coll" aria-controls="nav-coll"
       aria-expanded="false" aria-label="Toggle navigation" onclick="$('.navbar').toggleClass('scrolled');">
       &#9776
@@ -214,12 +214,12 @@
     <div class="collapse navbar-collapse" id="nav-coll">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" onclick="$('#home-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+          <a class="nav-link" onclick="$('#home-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent3('error_click');"
             href="#">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link"
-            onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent2();"
+            onclick="$('#services-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent2();sendCustomEvent3('error_click');"
             href="#">ATTRACTIONS</a>
         </li>
         <li class="nav-item">
@@ -227,7 +227,7 @@
             aria-controls="collapseOne" href="#">CART <i class="fa fa-shopping-cart"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" onclick="$('#contact-con').animatescroll();$('.navbar-collapse').collapse('hide');"
+          <a class="nav-link" onclick="$('#contact-con').animatescroll();$('.navbar-collapse').collapse('hide');sendCustomEvent3('error_click');"
             href="#">CONTACT</a>
         </li>
       </ul>
@@ -357,7 +357,7 @@
       <div class="col-sm-8 con2-col2 mobNoShow">
         <div class="row row-cols-md-4">
           <div class="col">
-            <div class="card headerCard">
+            <div class="card headerCard" onclick="sendCustomEvent3('error_click');">
               <div class="card-body headerCardBody">
                 <center>
                   <img src="img/hc1.png" class="headerCardImg" />
@@ -367,7 +367,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card headerCard">
+            <div class="card headerCard" onclick="sendCustomEvent3('error_click');">
               <div class="card-body headerCardBody">
                 <center>
                   <img src="img/hc2.png" class="headerCardImg" />
@@ -377,7 +377,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card headerCard">
+            <div class="card headerCard" onclick="sendCustomEvent3('error_click');">
               <div class="card-body headerCardBody">
                 <center>
                   <img src="img/hc3.png" class="headerCardImg" />
@@ -387,7 +387,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card headerCard">
+            <div class="card headerCard" onclick="sendCustomEvent3('error_click');">
               <div class="card-body headerCardBody">
                 <center>
                   <img src="img/hc4.png" class="headerCardImg" />
@@ -408,7 +408,7 @@
           <div class="card-deck">
             <div class="card">
               <div class="card-header">
-                <img src="img/av3.jpeg" class="card-img" />
+                <img src="img/av3.jpeg" class="card-img" onclick="sendCustomEvent3('error_click');"/>
               </div>
               <div class="card-body">
                 <h5 class="att-heading">Adventure Cove Waterpark</h5>
@@ -423,12 +423,12 @@
                   <p class="att-text">Southeast Asia’s first hydro-magnetic coaster isn’t our only claim to fame! From
                     zooming down..</p>
                 </div>
-                <button class="btn btn-seeMore" onclick="window.location='details.html';">SEE MORE</button>
+                <button class="btn btn-seeMore" onclick="window.location='details.html';sendCustomEvent3('ac_old_seemore');">SEE MORE</button>
               </div>
             </div>
             <div class="card">
               <div class="card-header">
-                <img src="img/av2.jpeg" class="card-img" />
+                <img src="img/av2.jpeg" class="card-img" onclick="sendCustomEvent3('error_click');"/>
               </div>
               <div class="card-body">
                 <h5 class="att-heading">Gogreen Cycle</h5>
@@ -443,12 +443,12 @@
                   <p class="att-text">Take a leisurely cycle around Sentosa to explore its numerous attractions with one
                     of Gogreen..</p>
                 </div>
-                <button class="btn btn-seeMore" onclick="window.location='details-gogreen.html';">SEE MORE</button>
+                <button class="btn btn-seeMore" onclick="window.location='details-gogreen.html';sendCustomEvent3('gg_old_seemore');">SEE MORE</button>
               </div>
             </div>
             <div class="card">
               <div class="card-header">
-                <img src="img/av4.jpeg" class="card-img" />
+                <img src="img/av4.jpeg" class="card-img" onclick="sendCustomEvent3('error_click');"/>
               </div>
               <div class="card-body">
                 <h5 class="att-heading">Beach Courts</h5>
@@ -467,7 +467,7 @@
                   <p class="att-text">Bask in the sun as you show off your sporting prowess through beach court
                     activities. At The State...</p>
                 </div>
-                <button class="btn btn-seeMore">SEE MORE</button>
+                <button class="btn btn-seeMore" onclick="sendCustomEvent3('error_click');">SEE MORE</button>
               </div>
             </div>
           </div>

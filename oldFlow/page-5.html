@@ -25,6 +25,12 @@
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="animatescroll.js"></script>
   <script src="logging.js"></script>
+  <script type="text/javascript">
+    function sendCustomEvent3(abcd) {
+      console.log('sendCustomEvent2');
+      loggingjs.logEvent(null, 'myevent2', abcd);
+    }
+  </script>
 
   <style>
     body {
@@ -66,7 +72,7 @@
 
     <div class="d-flex flex-row bd-highlight mb-3 r-11">
       <div style="margin-left:10px">
-        <img alt="" width="350" src="img/a1.png">
+        <img alt="" width="350" src="img/a1.png" onclick="sendCustomEvent3('error_click');">
       </div>
       <div style="margin-left:10px;width: 650px;" class="align-self-center">
         <h2>[Singapore Resident] Adventure Cove <br>Waterpark One-Day Ticket</h2>
@@ -86,7 +92,7 @@
           </label>
         </div>
 
-        <div class="form-col booking-dd-col">
+        <div class="form-col booking-dd-col" onclick="sendCustomEvent3('ac_old_ticket_qty');">
           <select class="chosen ticketgroup-select" data-is-ticket-count="yes">
             <option value="0" selected>0</option>
 
@@ -99,7 +105,7 @@
           </select>
         </div>
       </div>
-      <button class="btn dark-red" onclick="window.open('./page-6.html')">Add Ticket</button>
+      <button class="btn dark-red" onclick="window.location='./page-6.html';sendCustomEvent3('ac_old_add_ticket');">Add Ticket</button>
     </div>
   </div>
   
