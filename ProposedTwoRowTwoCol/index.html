@@ -20,60 +20,32 @@
     <script type="text/javascript" src="animatescroll.js"></script>
     <script src = "logging.js"></script>
     <script type="text/javascript">
-      $(function () {
-        $(document).scroll(function () {
-          var $nav = $(".navbar");
-          var $logoNav = $(".logo-nav");
-          $nav.toggleClass('scrolled',$(this).scrollTop() > $nav.height());
-          $logoNav.toggleClass('scrolled', $(this).scrollTop()>$nav.height()); 
-        });
-        $('#thankyou').removeClass("os");
-        $('#form1').submit(function(e){
-  
-            e.preventDefault(); // Prevent Default Submission
-          
-            $.ajax({
-               url: 'insert.php',
-               type: 'POST',
-               data: $(this).serialize(), // it will serialize the form data
-                      dataType: 'html'
-                  });
-            $('#thankyou').removeClass("thanks");
-            $('#thankyou').addClass("os");
-            $('#thankyou').addClass("alert");
-            $('#thankyou').addClass("alert-success");
-            $('#form-1').addClass('f-submit')
-          });
-        
-      });
-
-
       var cartObject = {}
-      var cartObject1 = {}
-      var cartArray = []
-      var cartCount = 0
+        var cartObject1 = {}
+        var cartArray = []
+        var cartCount = 0
 
-      function pushAttAdv(){
-        var e1 = document.getElementById("dateId");
-        var e2 = document.getElementById("opId");
-        var e3 = document.getElementById("quanId1");
-        var e4 = document.getElementById("attName");
-        var e5 = document.getElementById("quanId2");
-        cartObject.name = e4.innerHTML;
-        cartObject.date = e1.value;
-        cartObject.option = e2.options[e2.selectedIndex].text;
-        cartObject.quantity1 = e3.options[e3.selectedIndex].value;
-        cartObject.quantity2 = e5.options[e5.selectedIndex].value;
-        cartArray.push({...cartObject})
-        console.log(cartArray)
-        createCart()
-      }
-      function pushAttAdv1() {
+        function pushAttAdv() {
+          var e1 = document.getElementById("dateId");
+          var e2 = document.getElementById("opId");
+          var e3 = document.getElementById("quanId1");
+          var e4 = document.getElementById("attName");
+          var e5 = document.getElementById("quanId2");
+          cartObject.name = e4.innerHTML;
+          cartObject.date = e1.value;
+          cartObject.option = e2.options[e2.selectedIndex].text;
+          cartObject.quantity1 = e3.options[e3.selectedIndex].value;
+          cartObject.quantity2 = e5.options[e5.selectedIndex].value;
+          cartArray.push({ ...cartObject })
+          console.log(cartArray)
+          createCart()
+        }
+        function pushAttAdv1() {
           var e11 = document.getElementById("dateId-1");
           var e21 = document.getElementById("opId-1");
           var e31 = document.getElementById("quanId1-1");
           var e41 = document.getElementById("attName-1");
-          var e51 = document.getElementById("quanId2-1");
+
           cartObject1.name = e41.innerHTML;
           cartObject1.date = e11.value;
           cartObject1.option = e21.options[e21.selectedIndex].text;
@@ -86,82 +58,95 @@
           createCart()
         }
 
-      function createCart(){
-        $("#cartTable tr").remove(); 
-        $("#cartFormDiv").removeClass("cartFormDiv");
-        $("#cartFormDiv").addClass("cartFormDivShow");
-        cartCount = cartCount + 1
-        document.getElementById("cartCount").innerHTML = cartCount;
-        var table = document.getElementById("cartTable");
-        var row0 = table.insertRow(0);
-        var c1 = row0.insertCell(0);
-        var c2 = row0.insertCell(1);
-        var c3 = row0.insertCell(2);
-        var c4 = row0.insertCell(3);
-        var c5 = row0.insertCell(4);
-        var c6 = row0.insertCell(5);
-        c1.innerHTML = "Attraction Name";
-        c2.innerHTML = "Type";
-        c3.innerHTML = "Adult Qty";
-        c4.innerHTML = "Child Qty";
-        c5.innerHTML = "Date";
-        c6.innerHTML = "Total"
-        row0.style.fontWeight = "bolder";
-        row0.style.border = "none";
-        var finalPrice = 0;
-        cartArray.forEach(element => {
-          console.log("Elem$$",element);
-          var row = table.insertRow(1)
-          var cell1 = row.insertCell(0);
-          var cell2 = row.insertCell(1);
-          var cell3 = row.insertCell(2);
-          var cell4 = row.insertCell(3)
-          var cell5 = row.insertCell(4);
-          var cell6 = row.insertCell(5);
-          cell1.innerHTML = element.name;
-          cell2.innerHTML = element.option;
-          cell3.innerHTML = element.quantity1;
-          cell4.innerHTML = element.quantity2;
-          cell5.innerHTML = element.date;
+        function createCart() {
+          $("#cartTable tr").remove();
+          $("#cartFormDiv").removeClass("cartFormDiv");
+          $("#cartFormDiv").addClass("cartFormDivShow");
+          cartCount = cartCount + 1
+          document.getElementById("cartCount").innerHTML = cartCount;
+          var table = document.getElementById("cartTable");
+          var row0 = table.insertRow(0);
+          var c1 = row0.insertCell(0);
+          var c2 = row0.insertCell(1);
+          var c3 = row0.insertCell(2);
+          var c4 = row0.insertCell(3);
+          var c5 = row0.insertCell(4);
+          var c6 = row0.insertCell(5);
+          c1.innerHTML = "Attraction Name";
+          c2.innerHTML = "Type";
+          c3.innerHTML = "Adult Qty";
+          c4.innerHTML = "Child Qty";
+          c5.innerHTML = "Date";
+          c6.innerHTML = "Total"
+          row0.style.fontWeight = "bolder";
+          row0.style.border = "none";
+          var finalPrice = 0;
+          cartArray.forEach(element => {
+            console.log("Elem$$", element);
+            var row = table.insertRow(1)
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3)
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            cell1.innerHTML = element.name;
+            cell2.innerHTML = element.option;
+            cell3.innerHTML = element.quantity1;
+            cell4.innerHTML = element.quantity2;
+            cell5.innerHTML = element.date;
 
-          var priceAdult = 0;
-          var priceChild = 0;
-          var totalPrice = 0;
+            var priceAdult = 0;
+            var priceChild = 0;
+            var totalPrice = 0;
 
-          if(element.name=="Adventure Cove Waterpark"){
-            console.log("ENTER 1 $$$$")
-            if(element.option == "Resident"){
-              priceAdult = 38;
-              priceChild = 38;
+            if (element.name == "Adventure Cove Waterpark") {
+              console.log("ENTER 1 $$$$")
+              if (element.option == "Resident") {
+                priceAdult = 38;
+                priceChild = 38;
+              }
+              else if (element.option == "Non Resident") {
+                priceAdult = 45;
+                priceChild = 38;
+              }
+              priceAdult = priceAdult * parseInt(element.quantity1);
+              priceChild = priceChild * parseInt(element.quantity2);
+              totalPrice = priceAdult + priceChild;
             }
-            else if(element.option == "Non Resident"){
-              priceAdult = 45;
-              priceChild = 38;
+            else if (element.name == "Gogreen Cycle") {
+              console.log("ENTER 2 $$$$")
+              if (element.option == "Resident") {
+                console.log("ENTER 22 $$$$")
+                priceAdult = 15;
+                priceChild = 15;
+              }
+              else if (element.option == "Non Resident") {
+                priceAdult = 20;
+                priceChild = 15;
+              }
+              priceAdult = priceAdult * parseInt(element.quantity1);
+              priceChild = priceChild * parseInt(element.quantity2);
+              totalPrice = priceAdult;
             }
-            priceAdult = priceAdult * parseInt(element.quantity1);
-            priceChild = priceChild * parseInt(element.quantity2);
-            totalPrice = priceAdult + priceChild;
-          }
-          else if(element.name == "Gogreen Cycle"){
-            console.log("ENTER 2 $$$$")
-            if (element.option == "Resident") {
-              console.log("ENTER 22 $$$$")
-              priceAdult = 15;
-              priceChild = 15;
-            }
-            else if (element.option == "Non Resident") {
-              priceAdult = 20;
-              priceChild = 15;
-            }
-            priceAdult = priceAdult * parseInt(element.quantity1);
-            priceChild = priceChild * parseInt(element.quantity2);
-            totalPrice = priceAdult;
-          }
-          finalPrice = finalPrice + totalPrice;
-          cell6.innerHTML = totalPrice;
-          document.getElementById("grandTotal").innerHTML = "Grand Total: " + String(finalPrice);
-        });
-      }
+            finalPrice = finalPrice + totalPrice;
+            cell6.innerHTML = totalPrice;
+            document.getElementById("grandTotal").innerHTML = "Grand Total: " + String(finalPrice);
+          });
+        }
+
+        document.addEventListener('myevent2', loggingjs.logEvent, true);
+
+        function sendCustomEvent3(abcd) {
+          loggingjs.logEvent(null, 'myevent2', abcd);
+        }
+        function sendCustomEvent4() {
+          loggingjs.logEvent(null, 'startOfTask', 'proposed 1 row 3 col');
+        }
+        function taskComplete() {
+          alert("Task Completed");
+          loggingjs.logEvent(null, 'endOfTaskAllCorrect', 'proposed 1 row 3 col');
+        }
 
       
       document.addEventListener('myevent2', loggingjs.logEvent, true);
